@@ -35,7 +35,7 @@ fn register_pair(rp: u8) -> &'static str {
         0b010 => "H",
         0b011 => "SP",
         0b100 => "PSW",
-        _    => unreachable!(),
+        _     => unreachable!(),
     }
 }
 

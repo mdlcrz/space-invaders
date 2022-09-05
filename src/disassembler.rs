@@ -39,11 +39,8 @@ fn register_pair(rp: u8) -> &'static str {
     }
 }
 
-pub fn disassemble(program_counter: u16, instruction: &[u8])
-        -> Result<Instruction, Box<dyn Error>> {
+pub fn disassemble(instruction: &[u8]) -> Result<Instruction, Box<dyn Error>> {
     let decoded_instruction = decoder::decode(instruction)?;
-
-    print!("{:04x}  ", program_counter);
 
     match decoded_instruction {
         Instruction::Stc => {

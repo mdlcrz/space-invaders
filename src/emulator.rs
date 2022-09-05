@@ -104,8 +104,9 @@ impl Emulator {
                 self.interrupt_timers.interrupt = false;
             }
 
-            let decoded_instruction = disassembler::disassemble(
-                program_counter, &instruction)?;
+            print!("{:04x}  ", program_counter);
+
+            let decoded_instruction = disassembler::disassemble(&instruction)?;
 
             match decoded_instruction {
                 Instruction::Stc => {
